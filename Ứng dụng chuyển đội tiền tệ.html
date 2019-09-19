@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:color="http://www.w3.org/1999/xhtml" xmlns:text-align="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<link rel="stylesheet" type="text/css" href= "styles/Style.css"/>
+<body>
+
+<table style="width:30%; bolder-collapse:collapse;" border="0">
+    <tr>
+        <td colspan="3" style="background-color:navy;">
+            <MARQUEE>
+<span style="color:white;">Ứng dụng chuyện tiền tệ
+ </span>
+            </MARQUEE>
+        </td>
+        <td></td>
+        <td></td>
+
+    </tr>
+
+    <tr>
+        <td style="background-color:#222236;text-align: center"><p style="color: white ">Amount</p></td></td>
+        <td style="background-color:#222236;text-align: center"><p style="color: white ">From Currency</p></td>
+        <td style="background-color:#222236;text-align: center"><p style="color: white ">To Currency</p></td>
+</tr>
+    <tr>
+        <td>
+   <input type="text" id="NhapTien"/></td>
+</td><td>
+        <select id="VNUSA">
+              <option value="1">VietNam</option>
+              <option value="2">USA</option>
+    </select>
+       </td>
+        <td><select id="USAVN">
+               <option value="2">USA</option>
+               <option value="1">VietNam</option>
+    </select>
+        </td>
+    </tr>
+</select>
+    <tr>
+
+        <td><a href="#"class="stanfButton" onclick = "Convert()"><img src="images/right_16.png"/> Chuyển Đổi</a></td>
+        <td style="background: #222236"><label style="color: white" >Result: </label></td>
+         <td style="background: #222236"><output style="color: white" type = "text" id = result></output></td>
+
+    </tr>
+
+</table>
+
+<script>
+    function  Convert() {
+        let amount = document.getElementById("NhapTien").value;
+        let fromcurrency = document.getElementById("VNUSA").value;
+        let tocurrency = document.getElementById("USAVN").value;
+
+
+        if (fromcurrency == 1 && tocurrency == 2) {
+
+            document.getElementById("result").value = (amount / 23000) + " USD ";
+
+        } else {
+            if (fromcurrency == 2 && tocurrency == 1) {
+
+                document.getElementById("result").value = (amount * 23000) + " VND ";
+            } else {
+
+                document.getElementById("result").value = (amount) ;
+            }
+
+
+        }
+    }
+
+
+
+
+
+
+</script>
+</body>
+</html>
